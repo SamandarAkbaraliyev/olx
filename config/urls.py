@@ -25,7 +25,7 @@ urlpatterns += [
     path("api/", include("config.api_router")),
     # DRF auth token
     path("auth-token/", obtain_auth_token),
-    path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
+    path("api/schema/{slug:slug}/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="api-schema"),
